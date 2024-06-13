@@ -293,9 +293,10 @@ from
 
 ```
 
+![Data Cleaning](assets/images/Data Cleaning.PNG)
+
 
 # Data Testing
-
 
 What are we testing for? 
 
@@ -376,23 +377,147 @@ where
 ```
 
 
+![Column Count Check](assets/images/Column Count Check.PNG)
 
 
 
+#### Duplicate Check
+
+```sql
+/*
+	Duplicate Check (PASSED!!!)
+	1. We used union to remove all duplicates (if there were any)
+*/
+
+select
+	a.row_count_1 + b.row_count_2 as total_row_count
+from	
+	(select
+		count(*) row_count_1
+	from
+		bike_data.dbo.bike_share_yr_0) a,
+	(select
+		count(*) row_count_2
+	from
+		bike_data.dbo.bike_share_yr_1) b
+
+
+select
+	count(*) as total_row_count_dup_removed
+from
+	(  select
+			*
+		from
+			bike_data.dbo.bike_share_yr_0
+
+	union 
+
+		select
+			*
+		from
+			bike_data.dbo.bike_share_yr_1
+		) a
+
+```
+
+
+![Duplicate Check](assets/images/Duplicate Check.PNG)
 
 
 
+#### Null Value Check
+
+```sql
+/*
+	Null Value Check (PASSED!!!)
+	1. Check to see if there are any null values in our datset
+*/
+
+with bike_share_all as (
+		select
+			*
+		from
+			bike_data.dbo.bike_share_yr_0
+
+		union 
+
+		select
+			*
+		from
+			bike_data.dbo.bike_share_yr_1
+	)
+
+select
+	b.dteday as date
+  , b.season
+  , b.yr as year
+  , b.weekday
+  , b.hr as hour
+  , b.rider_type
+  , b.riders
+  , c.price
+  , c.cogs as cost_of_goods_sold
+  , b.riders * c.price as revenue
+  , b.riders * c.price - c.cogs * b.riders as profit
+from	
+	bike_share_all b
+		left join bike_data.dbo.cost_table c
+			on b.yr = c.yr
+where
+	1=1
+	and b.dteday is null
+	or b.season is null
+	or b.yr is null
+	or b.weekday is null
+	or b.hr is null
+	or b.rider_type is null
+	or b.riders is null
+	or c.price is null
+	or c.cogs is null
+
+```
 
 
+![Null Value Check](assets/images/Null Value Check.PNG)
 
 
+#### Data Validity Check
+
+```sql
+/*
+	Revenue and profit validation check (PASSED!!!)
+	1. Use a calculator to see if the calculations are accurate for 5-10 rows
+*/
+
+with bike_share_all as (
+		select
+			*
+		from
+			bike_data.dbo.bike_share_yr_0
+
+		union 
+
+		select
+			*
+		from
+			bike_data.dbo.bike_share_yr_1
+	)
+
+select
+	b.riders
+  , c.price
+  , c.cogs as cost_of_goods_sold
+  , b.riders * c.price as revenue
+  , b.riders * c.price - c.cogs * b.riders as profit
+from	
+	bike_share_all b
+		left join bike_data.dbo.cost_table c
+			on b.yr = c.yr
+
+```
 
 
-
-
-
-
-
+![Data Validity Check](assets/images/Revenue and Profit Check.PNG)
 
 
 
