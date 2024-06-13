@@ -145,6 +145,7 @@ We need to add measures in place to confirm the dataset contains the data requir
 6. Which months out of the year are most profitable - top 5?
 7. What is the difference between revenue and profit in 2021 and 2022?
 8. Did the price change from 2021 to 2022 influence the rider demographic?
+9. What is the price elasticity of demand?
 
 
 ### Dashboard Mockup
@@ -518,6 +519,109 @@ from
 
 
 ![Data Validity Check](assets/images/Revenue and Profit Check.PNG)
+
+
+
+# Visualization
+
+
+### Power BI Dashboard Results
+
+
+### DAX Measures
+
+#### 1. Net Profit Margin
+
+```sql
+Net Profit Margin = 
+VAR sumofrevenue = sum(Query1[revenue])
+VAR sumofprofit = sum(Query1[profit])
+VAR profitmargin = divide(sumofprofit, sumofrevenue)
+
+RETURN profitmargin
+
+```
+
+# Analysis
+
+## Findings
+
+For this analysis, we will be focusing on the questions below : 
+
+Here are the questions we need to answer for CFO David : 
+
+1. What is the percentage change in price from 2021 to 2022?
+2. What is the percentage change in customers from 2021 to 2022?
+3. During what hours of the day is most profitable - top 5?
+4. Which weekdays are most profitable - top 3?
+5. Which seasons yield the most profit?
+6. Which months out of the year are most profitable - top 5?
+7. What is the difference between revenue and profit in 2021 and 2022?
+8. Did the price change from 2021 to 2022 influence the rider demographic?
+9. What is the price elasticity of demand?
+
+
+#### 1. What is the percentage change in price from 2021 to 2022?
+
+Perecentage change in price from 2021 to 2022 = 25%
+
+#### 2. What is the percentage change in customers from 2021 to 2022?
+
+Percentage change in customers from 2021 to 2022 = 100%
+
+#### 3. During what hours of the day is most profitable - top 5?
+
+8AM, 4-7PM are the most profitable hours of the day
+
+Actual hours - 
+- 8, 16, 17, 18, 19
+
+#### 4. Which weekdays are most profitable - top 3?
+
+- Thursday
+- Friday
+- Saturday
+
+#### 5. Which seasons yield the most profit?
+
+In both 2021 and 2022, the order of profitability based on seasons is as follows: 
+
+1. Fall
+2. Summer
+3. Winter
+4. Spring
+
+#### 6. Which months out of the year are most profitable - top 5?
+
+The most profitable months out of the year are September, Augst, July, June, May
+
+Month numbers : 9, 8, 7, 6, 5
+
+#### 7. What is the difference between revenue and profit in 2021 and 2022?
+
+Revenue :
+
+Revenue difference = $5,000,000.00
+Percentage difference in revenue = 100%
+
+Profit :
+
+Profit difference = $3,610,000
+Percentage difference in profit = 105.56%
+
+
+#### 8. Did the price change from 2021 to 2022 influence the rider demographic?
+
+The demographic shifted 1.7% from casual to registered customers, the price adjustment did not significantly impact customer demographic 
+
+
+#### 9. What is the price elasticity of demand?
+
+Price Elasticity of demand = 4.0
+
+
+### Notes 
+
 
 
 
