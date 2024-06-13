@@ -622,7 +622,13 @@ Price Elasticity of demand = 4.0
 
 ### Notes 
 
+For this analysis, we prioritized analyzing metrics that directly impacted profit for this price adjustment analysis. The analysis we will do include : 
 
+1. Revenue and profit analysis
+2. Seasonal revenue analysis
+3. Rider demographic analysis
+4. Most profitable time analysis
+5. Customer base analysis
 
 
 
