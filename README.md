@@ -99,19 +99,19 @@ What information is needed to achieve our objective?
 
 What data is needed? 
 
-| Column Name | Data Type | Nullable |
-| --- | --- | --- |
-| date | DATE | NO |
-| season | INTEGER | NO |
-| year | INTEGER | NO |
-| weekday | INTEGER | NO |
-| hour | INTEGER  | NO |
-| rider_type | NVARCHAR(50) | NO |
-| riders | INTEGER | NO |
-| price | MONEY | NO |
-| cogs | INTEGER | NO |
-| revenue | MONEY | NO |
-| profit | MONEY | NO |
+| Column Name | Data Type |
+| --- | --- |
+| date | DATE | 
+| season | INTEGER |
+| year | INTEGER | 
+| weekday | INTEGER | 
+| hour | INTEGER  | 
+| rider_type | NVARCHAR(50) |
+| riders | INTEGER | 
+| price | MONEY | 
+| cogs | INTEGER | 
+| revenue | MONEY | 
+| profit | MONEY |
 
 
 ### Data Quality Checks
@@ -240,10 +240,33 @@ Sample of an appropriately cleaned dataset :
 | 10-24-2022 | 4 | 1 | 3 | 17 | registered | 876 | 4.99 | 1.56 |  4371.24 | 3004.68 |
 
 
+And here is a tabular representation of the expected schema for the clean data: 
+
+| Column Name | Data Type | Nullable |
+| --- | --- | --- |
+| date | DATE | NO |
+| season | INTEGER | NO |
+| year | INTEGER | NO |
+| weekday | INTEGER | NO |
+| hour | INTEGER  | NO |
+| rider_type | NVARCHAR(50) | NO |
+| riders | INTEGER | NO |
+| price | MONEY | NO |
+| cogs | INTEGER | NO |
+| revenue | MONEY | NO |
+| profit | MONEY | NO |
 
 
+### Data Cleaning Steps
+
+1. Remove unnessary columns by selecting the columns needed for analysis
+2. Change date format for the date column
+3. Union and join the tables
+4. Create a revenue and profit column
+5. Rename columns using aliases
 
 
+#### Transform the data 
 
 
 
