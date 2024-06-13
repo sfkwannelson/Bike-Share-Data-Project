@@ -233,7 +233,7 @@ We are aiming to refine the data and select only data that is necessary for our 
 Sample of an appropriately cleaned dataset : 
 
 | date | season | year | weekeday | hour | rider_type | riders | price | cost_of_goods_sold | revenue | profit |
-| --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 12-09-2022 | 3 | 1 | 3 | 18 | registered | 886 | 4.99 | 1.56 |  4421.14 | 3038.98 |
 | 09-20-2022 | 3 | 1 | 4 | 17 | registered | 885 | 4.99 | 1.56 |  4416.15 | 3035.55 |
 | 09-26-2022 | 4 | 1 | 3 | 17 | registered | 876 | 4.99 | 1.56 |  4371.24 | 3004.68 |
