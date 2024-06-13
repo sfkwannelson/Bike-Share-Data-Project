@@ -116,30 +116,12 @@ What data is needed?
 
 ### Data Quality Checks
 
-What are we testing for? 
-
-High Quality Data Set - data that is complete and accurate, not missing records or inaccurate data : 
-
-- make sure our stakeholders can make accurate decisions based on this data
-- 
-
-In order to make sure this is true, and we do have high quality data sets, we need to run different tests : 
-
-Data Quality Tests : 
+We need to add measures in place to confirm the dataset contains the data required without any issues - here are some of the data quality checks we need to conduct : 
 
 - Column Count Check
 - Duplicate Check
 - Null Values Check
 - Data Validity Check
-
-
-Expectations : 
-| Test | Results | 
-| --- | --- | 
-| Column Count Check | 11 |
-| Duplicate Check | 0 | 
-| Null Values Check | 0 | 
-| Data Validity Check | Correct | 
 
 
 # Stages
@@ -267,6 +249,152 @@ And here is a tabular representation of the expected schema for the clean data:
 
 
 #### Transform the data 
+
+
+```sql
+/*
+	Data cleaning 
+	1. Connect all data sources via union or joins
+	2. Select specific columns neccessary for analysis
+	3. Assign aliases/ rename columns for consistency
+	4. Include revenue and profit calculations
+*/
+
+with bike_share_all as (
+		select
+			*
+		from
+			bike_data.dbo.bike_share_yr_0
+
+		union 
+
+		select
+			*
+		from
+			bike_data.dbo.bike_share_yr_1
+	)
+
+select
+	b.dteday as date
+  , b.season
+  , b.yr as year
+  , b.weekday
+  , b.hr as hour
+  , b.rider_type
+  , b.riders
+  , c.price
+  , c.cogs as cost_of_goods_sold
+  , b.riders * c.price as revenue
+  , b.riders * c.price - c.cogs * b.riders as profit
+from	
+	bike_share_all b
+		left join bike_data.dbo.cost_table c
+			on b.yr = c.yr
+
+```
+
+
+# Data Testing
+
+
+What are we testing for? 
+
+
+High Quality Data Set - data that is complete and accurate, not missing records or inaccurate data : 
+
+- make sure our stakeholders can make accurate decisions based on this data
+  
+
+In order to make sure this is true, and we do have high quality data sets, we need to run different tests : 
+
+Data Quality Tests : 
+
+- Column Count Check
+- Duplicate Check
+- Null Values Check
+- Data Validity Check
+
+
+Expectations : 
+| Test | Results | 
+| --- | --- | 
+| Column Count Check | 11 |
+| Duplicate Check | 0 | 
+| Null Values Check | 0 | 
+| Data Validity Check | Correct | 
+
+
+#### Column Count Check
+
+```sql
+/*
+	Column count check (PASSED!!!)
+	1. Ensure that there are 11 unqiue columns being used
+*/
+
+with bike_share_all as (
+		select
+			*
+		from
+			bike_data.dbo.bike_share_yr_0
+
+		union 
+
+		select
+			*
+		from
+			bike_data.dbo.bike_share_yr_1
+	), 
+
+bike_data_column_count as (
+		select
+			b.dteday as date
+		  , b.season
+		  , b.yr as year
+		  , b.weekday
+		  , b.hr as hour
+		  , b.rider_type
+		  , b.riders
+		  , c.price
+		  , c.cogs as cost_of_goods_sold
+		  , b.riders * c.price as revenue
+		  , b.riders * c.price - c.cogs * b.riders as profit
+		from	
+			bike_share_all b
+				left join bike_data.dbo.cost_table c
+					on b.yr = c.yr
+	)
+
+select
+	count(*) as column_count
+from
+	information_schema.columns
+where
+	1=1
+	and table_name = 'bike_data_column_count'
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
