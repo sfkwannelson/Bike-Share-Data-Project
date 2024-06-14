@@ -719,9 +719,10 @@ from
 
 #### Output
 
+![Revenue and Profit Analysis](assets/images/Revenue and Profit Analysis.PNG)
 
 #### Excel Analysis Workbook
 
-
+![Revenue and Profit Analysis - Workbook](assets/images/Revenue and Profit Analysis - Workbook.PNG)
 
 
