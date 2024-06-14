@@ -263,20 +263,20 @@ And here is a tabular representation of the expected schema for the clean data:
 
 with bike_share_all as (
 		select
-			*
+		    *
 		from
-			bike_data.dbo.bike_share_yr_0
+		    bike_data.dbo.bike_share_yr_0
 
 		union 
 
 		select
-			*
+		    *
 		from
-			bike_data.dbo.bike_share_yr_1
+		    bike_data.dbo.bike_share_yr_1
 	)
 
 select
-	b.dteday as date
+    b.dteday as date
   , b.season
   , b.yr as year
   , b.weekday
@@ -288,9 +288,9 @@ select
   , b.riders * c.price as revenue
   , b.riders * c.price - c.cogs * b.riders as profit
 from	
-	bike_share_all b
-		left join bike_data.dbo.cost_table c
-			on b.yr = c.yr
+    bike_share_all b
+	  left join bike_data.dbo.cost_table c
+		on b.yr = c.yr
 
 ```
 
@@ -336,21 +336,21 @@ Expectations :
 
 with bike_share_all as (
 		select
-			*
+		    *
 		from
-			bike_data.dbo.bike_share_yr_0
+		    bike_data.dbo.bike_share_yr_0
 
 		union 
 
 		select
-			*
+		    *
 		from
-			bike_data.dbo.bike_share_yr_1
+		    bike_data.dbo.bike_share_yr_1
 	), 
 
 bike_data_column_count as (
 		select
-			b.dteday as date
+	            b.dteday as date
 		  , b.season
 		  , b.yr as year
 		  , b.weekday
@@ -362,18 +362,18 @@ bike_data_column_count as (
 		  , b.riders * c.price as revenue
 		  , b.riders * c.price - c.cogs * b.riders as profit
 		from	
-			bike_share_all b
-				left join bike_data.dbo.cost_table c
-					on b.yr = c.yr
+		    bike_share_all b
+			 left join bike_data.dbo.cost_table c
+				on b.yr = c.yr
 	)
 
 select
-	count(*) as column_count
+    count(*) as column_count
 from
-	information_schema.columns
+    information_schema.columns
 where
-	1=1
-	and table_name = 'bike_data_column_count'
+    1=1
+    and table_name = 'bike_data_column_count'
 
 ```
 
@@ -394,29 +394,29 @@ select
 	a.row_count_1 + b.row_count_2 as total_row_count
 from	
 	(select
-		count(*) row_count_1
+	      count(*) row_count_1
 	from
-		bike_data.dbo.bike_share_yr_0) a,
+	      bike_data.dbo.bike_share_yr_0) a,
 	(select
-		count(*) row_count_2
+	      count(*) row_count_2
 	from
-		bike_data.dbo.bike_share_yr_1) b
+	      bike_data.dbo.bike_share_yr_1) b
 
 
 select
 	count(*) as total_row_count_dup_removed
 from
 	(  select
-			*
-		from
-			bike_data.dbo.bike_share_yr_0
+		*
+	   from
+		bike_data.dbo.bike_share_yr_0
 
 	union 
 
-		select
-			*
-		from
-			bike_data.dbo.bike_share_yr_1
+	   select
+		*
+	   from
+		bike_data.dbo.bike_share_yr_1
 		) a
 
 ```
@@ -436,20 +436,20 @@ from
 
 with bike_share_all as (
 		select
-			*
+		    *
 		from
-			bike_data.dbo.bike_share_yr_0
+		    bike_data.dbo.bike_share_yr_0
 
 		union 
 
 		select
-			*
+		    *
 		from
-			bike_data.dbo.bike_share_yr_1
+		    bike_data.dbo.bike_share_yr_1
 	)
 
 select
-	b.dteday as date
+    b.dteday as date
   , b.season
   , b.yr as year
   , b.weekday
@@ -461,9 +461,9 @@ select
   , b.riders * c.price as revenue
   , b.riders * c.price - c.cogs * b.riders as profit
 from	
-	bike_share_all b
-		left join bike_data.dbo.cost_table c
-			on b.yr = c.yr
+    bike_share_all b
+	 left join bike_data.dbo.cost_table c
+		on b.yr = c.yr
 where
 	1=1
 	and b.dteday is null
@@ -492,28 +492,28 @@ where
 
 with bike_share_all as (
 		select
-			*
+		    *
 		from
-			bike_data.dbo.bike_share_yr_0
+		    bike_data.dbo.bike_share_yr_0
 
 		union 
 
 		select
-			*
+		    *
 		from
-			bike_data.dbo.bike_share_yr_1
+		    bike_data.dbo.bike_share_yr_1
 	)
 
 select
-	b.riders
+    b.riders
   , c.price
   , c.cogs as cost_of_goods_sold
   , b.riders * c.price as revenue
   , b.riders * c.price - c.cogs * b.riders as profit
 from	
-	bike_share_all b
-		left join bike_data.dbo.cost_table c
-			on b.yr = c.yr
+    bike_share_all b
+	   left join bike_data.dbo.cost_table c
+		  on b.yr = c.yr
 
 ```
 
@@ -601,13 +601,12 @@ Month numbers : 9, 8, 7, 6, 5
 
 Revenue :
 
-Revenue difference = $5,000,000.00
-Percentage difference in revenue = 100%
+Revenue difference = $5,267,403.00 <br>
+Percentage difference in revenue = 106.2% <br>
 
 Profit :
-
-Profit difference = $3,610,000
-Percentage difference in profit = 105.56%
+Profit difference = $3,611,512.00 <br>
+Percentage difference in profit = 105.56% <br>
 
 
 #### 8. Did the price change from 2021 to 2022 influence the rider demographic?
@@ -631,17 +630,97 @@ For this analysis, we prioritized analyzing metrics that directly impacted profi
 5. Customer base analysis
 
 
+## Validation
 
 
+### 1. Revenue and Profit Analysis
+
+#### Calculation Breakdown
+
+2021 :
+
+- price = $3.99
+- COGS = $1.24
+- riders = 1,243,103
+
+2022 :
+
+- price = $4.99
+- COGDS = $1.56
+- riders = 2,049,576
+
+Price change from 2021 to 2022 = 25%
+
+a. 2021
+
+- Net Revenue = price * riders = $3.99 * 1,243,103 =  $4,959,981 
+- Net Profit = Net Revenue - (COGS * riders) = $4,959,981 - ($1.24 * 1,243,103) = $3,418,533 
+- Change in revenue = (new revenue - old revenue) / old revenue = 0
+- Change in profit = (new profit - old profit) / old profit = 0
+
+b. 2022
+
+- Net Revenue = price * riders = $4.99 * 2,049,576 = $10,227,384 
+- Net Profit = Net Revenue - (COGS * riders) = $10,227,384  - ($1.56 * 2,049,576) = $7,030,046 
+- Change in revenue = (new revenue - old revenue) / old revenue = ($10,227,384 - $4,959,981) / $4,959,981 = 106.2%
+- Change in profit = (new profit - old profit) / old profit = ($7,030,046 - $3,418,533) / $3,418,533 = 105.6%
+
+**With a 25% increase in the price, we see 105.6% increase in profit**
 
 
+#### SQL query
+
+```sql
+/*
+	Revenue and Profit Analysis
+	1. Query to find riders count for each individual year (2021, 2022)
+	2. Delcare variables
+	2. Calculate net revenue = price * riders
+	3. Calculate net profit = net revenue - cogs
+	4. Calculate change in revenue = Nr - Or/ Or
+	5. Calculate change in profit = Np - Op/ Op
+*/
+
+declare @2021price money = 3.99; -- price in 2021
+declare @2022price money = 4.99; -- price in 2022
+declare @2021COGS money = 1.24; -- cogs in 2021
+declare @2022COGS money = 1.56; -- cogs in 2022
+declare @2021riders int = 1243103; -- rider count in 2021
+declare @2022riders int = 2049576; -- rider count in 2022
 
 
+with bike_share_all as (
+		select
+		    *
+		from
+		    bike_data.dbo.bike_share_yr_0
+
+		union 
+
+		select
+		    *
+		from
+		    bike_data.dbo.bike_share_yr_1
+	)
+
+select
+    @2021price * @2021riders as net_revenue_2021
+  , @2022price * @2022riders as net_revenue_2022
+  , (@2021price * @2021riders) - (@2021COGS * @2021riders) as net_profit_2021
+  , (@2022price * @2022riders) - (@2022COGS * @2022riders) as net_profit_2022
+  , ((@2022price * @2022riders) - (@2021price * @2021riders))/ (@2021price * @2021riders)  as perc_change_in_rev
+  , (((@2022price * @2022riders) - (@2022COGS * @2022riders)) - ((@2021price * @2021riders) - (@2021COGS * @2021riders)))/ ((@2021price * @2021riders) - (@2021COGS * @2021riders)) as per_change_in_prof
+from	
+    bike_share_all b
+          left join bike_data.dbo.cost_table c
+                on b.yr = c.yr
+
+```
+
+#### Output
 
 
-
-
-
+#### Excel Analysis Workbook
 
 
 
