@@ -646,7 +646,7 @@ For this analysis, we prioritized analyzing metrics that directly impacted profi
 2022 :
 
 - price = $4.99
-- COGDS = $1.56
+- COGS = $1.56
 - riders = 2,049,576
 
 Price change from 2021 to 2022 = 25%
