@@ -905,15 +905,45 @@ riders as (
 ![Rider Demographic Analysis - Workbook](assets/images/Rider Demographic Analysis - Workbook.PNG)
 
 
+## Discovery
+
+What did we discover? 
+
+1. With a price adjustment from 3.99 in 2021 to 4.99 in 2022, there was an :
+- Increase in users by 199% - 1M to 2M
+- Both revenue and profit increased by 106% +
+2. Fall was the most profitable season, followed up by summer, winter, and fall
+3. The rider demographic did not change significantly with the new adjusted price in 2022
 
 
+# Recommendations
+
+1. If the goal is to maximize profits, then a price increase yields a net positive, therefore a conservative increase in price by 10-15% will yield higher profits without risking significant customer loss.
+- 10% increase from $4.99 = $5.49
+- 15% increase from $4.99 = $5.74
+3. Price adjustments don't have a strong impact on seasonal profits - profits are linear in regards to seasons, so this may be an indicator for an alternative adjustment.
+4. Rider demographic is also not strongly impacted by price changes, so segmented pricing strategy or an incentive program may be better.
+
+### Potential ROI
+
+Price Elasticity = change in demand/ change in price = 100%/ 25% = 4 
+
+We have a price elasticity of 4, meaning, when price is increased by 25% - there is a 100% increase in demand. We don't know where the fall off is - so a 10-15% increase in price is conservative enough to yield higher profits while mitigating potential loss in customers.
+
+### Action Plan
+
+Based on our analysis, we can comfortably increase prices by 10-15% in order to increase profits for the next year. <br>
+
+We will reach out the CFO David and the financial team provide our recommendation for a conservative 10% to test the market, and if the feedback is positive - we can move forward with additional price adjustments. <br>
+
+We can also recommend an implementation of price adjustments based on rider demographic - meaning, charging two different prices for the two demographics of casual and registered users because price sensitivity may vary between the two. 
 
 
-
-
-
-
-
+Steps to take in order to implement the recommended decisions effectively :
+1. Reach out to CFO David to process price adjustments for the next year
+2. Actively monitor user levels, revenue and profit post price adjustment
+3. If the user based responds positively to the price adjustment, then look for a more aggressive price increase
+4. Review, and if we have a net positive, move onto different price adjustments for demographic types
 
 
 
