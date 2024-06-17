@@ -2,8 +2,36 @@
 
 
 
-
 # Table of Contents
+- [Business Case](#business-case)
+- [Objective](#objective)
+  - [Target Audience](#target-audience)
+  - [Deadline](#deadline)
+- [User Story](#user-story)
+  - [Acceptance Criteria](#acceptance-criteria)
+  - [Success Criteria](#success-criteria)
+- [Data Source](#data-source)
+  - [Data Quality Checks](#data-quality-checks)
+- [Stages](#stages)
+- [Design](#design)
+  - [Dashboard Components](#dashboard-components)
+  - [Dashboard Mockup](#dashboard-mockup)
+  - [Tools](#tools)
+- [Development](#development)
+  - [Initial Data Exploration](#initial-data-exploration)
+  - [Data Cleaning](#data-cleaning)
+  - [Data Cleaning Steps](#data-cleaning-steps)
+- [Data Testing](#data-testing)
+- [Visualization](#visualization)
+  - [Power BI Dashboard](#power-bi-dashboard)
+  - [DAX Measures](#dax-measures)
+- [Analysis](#analysis)
+  - [Findings](#findings)
+  - [Validation](#validation)
+  - [Discovery](#discovery)
+- [Recommendations](#recommendations)
+  - [Potential ROI](#potential-roi)
+  - [Action Plan](#action-plan)
 
 
 
