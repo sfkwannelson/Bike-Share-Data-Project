@@ -1,4 +1,4 @@
-# Bike Share Data Project 
+# Toman Bike Share - Data Project
 
 ![bike riding penguin](assets/images/bike riding penguin.gif)
 
@@ -93,9 +93,9 @@ As the CFO of Toman Bike Share, I want to utilize revenue and demographic trend 
 
 The dashboard should include : 
 
-- Hour Revenue Analysis
 - Profit and Revenue Trends
-- Seasonal Revenue
+- Hour Revenue Information
+- Seasonal Revenue 
 - Ride Demographics
 - Color-coded to reflect company colors
 - Be user-friendly and easy to filter/ sort 
@@ -346,8 +346,9 @@ Data Quality Tests :
 
 
 Expectations : 
+
 | Test | Results | 
-| --- | --- | 
+| --- | --- |
 | Column Count Check | 11 |
 | Duplicate Check | 0 | 
 | Null Values Check | 0 | 
