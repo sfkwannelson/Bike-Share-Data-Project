@@ -936,7 +936,7 @@ riders as (
 What did we discover? 
 
 1. With a price adjustment from 3.99 in 2021 to 4.99 in 2022, there was an :
-- Increase in users by 199% - 1M to 2M
+- Increase in users by ~ 100% - 1M to 2M
 - Both revenue and profit increased by 106% +
 2. Fall was the most profitable season, followed up by summer, winter, and fall
 3. The rider demographic did not change significantly with the new adjusted price in 2022
@@ -960,9 +960,9 @@ We have a price elasticity of 4, meaning, when price is increased by 25% - there
 
 Based on our analysis, we can comfortably increase prices by 10-15% in order to increase profits for the next year. <br>
 
-We will reach out the CFO David and the financial team provide our recommendation for a conservative 10% to test the market, and if the feedback is positive - we can move forward with additional price adjustments. <br>
+We will reach out the CFO David and the financial team to provide our recommendation for a conservative 10% price increase to test the market, and if the feedback is positive - we can move forward with additional price adjustments. <br>
 
-We can also recommend an implementation of price adjustments based on rider demographic - meaning, charging two different prices for the two demographics of casual and registered users because price sensitivity may vary between the two. 
+We can also recommend an implementation of price adjustments based on rider demographic - meaning, charging two different prices for the two demographics : casual and registered users because price sensitivity may vary between the two. 
 
 
 Steps to take in order to implement the recommended decisions effectively :
