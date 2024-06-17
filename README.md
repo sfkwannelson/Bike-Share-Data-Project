@@ -1,6 +1,6 @@
 # Bike Share Data Project 
 
-
+![Logo](assets/images/logo.PNG)
 
 # Table of Contents
 - [Business Case](#business-case)
