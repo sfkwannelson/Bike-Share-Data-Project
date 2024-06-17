@@ -628,12 +628,9 @@ Month numbers : 9, 8, 7, 6, 5
 
 #### 7. What is the difference between revenue and profit in 2021 and 2022?
 
-Revenue :
-
 Revenue difference = $5,267,403.00 <br>
 Percentage difference in revenue = 106.2% <br>
 
-Profit :
 Profit difference = $3,611,512.00 <br>
 Percentage difference in profit = 105.56% <br>
 
