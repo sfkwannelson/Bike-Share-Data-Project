@@ -821,7 +821,7 @@ order by
 
 #### Output
 
-![Seasonal Revenue Analysis](assets/images/Seasonal Revenue Analysis.PNG)
+![Seasonal Revenue Analysis](assets/images/Seasonal Revenue Analysis 2.PNG)
 
 #### Excel Analysis Workbook
 
