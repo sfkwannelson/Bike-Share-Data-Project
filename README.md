@@ -556,6 +556,7 @@ from
 
 ### Power BI Dashboard Results
 
+![Dashboard](assets/images/Recorded Dashboard.gif)
 
 ### DAX Measures
 
